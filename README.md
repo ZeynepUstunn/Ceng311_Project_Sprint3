@@ -23,7 +23,7 @@ Code: $("#dialog").dialog({ autoOpen: false, modal: true });
 
 5.Slider (Online Appointment page)
 Usage: Displays and updates a numerical value in the user interface.
-Code: $("#slider").slider({ value: 50, min: 0, max: 100, slide: function(event, ui) { $("#slider-value").text(ui.value); } });
+Code: `$("#slider").slider({ value: 50, min: 0, max: 100, slide: function(event, ui) { $("#slider-value").text(ui.value); } });`
 
 6.Modal (Online Appointment page)
 Usage: Display confirmation message after submitting the appointment request form. (Online Appointment Request)
