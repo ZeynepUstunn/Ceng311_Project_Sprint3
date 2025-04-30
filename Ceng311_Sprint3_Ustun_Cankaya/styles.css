@@ -1,0 +1,920 @@
+/* General Styles - Base styling for the entire website */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  scroll-behavior: smooth; /* Enables smooth scrolling between section */
+}
+
+/* Navigation Bar - Fixed top menu styling */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Distributes items evenly */
+  align-items: center;
+  background: linear-gradient(90deg, #6cafb8, #c8e3e8); /* Gradient background */
+  padding: 10px 20px;
+  position: fixed; /* Keeps navbar at the top while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures navbar stays on top of other elements */
+  box-sizing: border-box;
+}
+
+/* Logo Container - Holds the logo image and text */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo Image - Styling for the logo */
+.logo-img {
+  width: 50px; /* Logo boyutu */
+  height: auto;
+  margin-right: 10px;
+}
+
+/* Logo Text - Professional title next to logo */
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #003b46;
+}
+
+/* Navigation Links - Menu items in the navbar */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #003b46;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Styles applied when hovering over navigation links */
+.nav-links a:hover {
+  background: #003b46; /* Background color changes to a dark teal/blue when hovered */
+  color: white;        /* Text color turns white */
+  border-radius: 5px;  /* Edges of the link are rounded with a radius of 5px */
+}
+
+/* Style of Welcome Section Area*/
+.welcome {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center;
+  text-align: center;
+  background: url("https://r.resimlink.com/jgrUE3iPWGtb.jpg") center / cover no-repeat; /* Arka plan resmi */
+  color: white; 
+  overflow: hidden; /* Hides any overflowing content */
+}
+
+/* Light Transparent Dark Layer (For Readability) */
+.welcome::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+}
+
+#welcome-text {
+  position: relative; /* Positions the welcome text relative to its container */
+}
+
+/* Welcome Section Headings and Text */
+.welcome h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.welcome p {
+  font-size: 20px;
+}
+/* End of Welcome Section */
+
+/* Section Styling - General layout for all main sections */
+section {
+  min-height: 100vh; /* Minimum full viewport height */
+  padding: 80px 20px; /* Top padding accounts for navbar height */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Center the content horizontally */
+}
+
+/* Psychological Support Section - Styling for services overview */
+.psychological-support {
+  background: none; /* Transparent background */
+  color: #003b46;
+  max-width: 900px;
+  margin: 0 auto; /* Centers the section horizontally */
+  padding: 40px 20px; /* Padding around content */
+  text-align: center; /* Centers text */
+  border-radius: 10px; /* Slightly rounded corners */
+
+  opacity: 0;
+  transform: translateY(40px); /* Moves the element 40px down from its original position */
+  transition: opacity 5s ease, transform 5s ease; /* Adds a smooth transition for the opacity and transform properties over 5 seconds */
+}
+
+/* Start animation when visible */
+.animate-support {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Online Psychological Support Section - Styling for online services */
+.online-support {
+  background: #e6f7f9;
+  padding: 60px 20px;
+}
+
+/* Content Container - Flex layout for text and image */
+.online-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+/* Text Area (Left-aligned) - Content styling */
+.online-content .text {
+  flex: 1;
+  text-align: left;
+  max-width: 600px;
+}
+
+.online-content h2 {
+  font-size: 30px;
+  color: #003b46;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.online-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4a4a4a;
+}
+
+/* List Styling - For feature lists */
+.support-list {
+  list-style: none;
+  padding: 0;
+  font-size: 17px;
+}
+
+.support-list li {
+  padding: 10px 0;
+  color: #003b46;
+  /* Text separation within list items */
+}
+
+/* Image Area (Right-aligned) - Image container styling */
+.online-content .image {
+  flex: 1;
+  text-align: right;
+}
+
+.online-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Areas of Expertise Section */
+.expertise {
+  background: #f5f8fa;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.expertise h2 {
+  font-size: 28px;
+  color: #003b46;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+/* Grid Layout - For expertise areas */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+  gap: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Box Styling - Individual expertise area cards */
+.expertise-box {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smoothly transitions the transform property and box-shadow over 0.3 seconds */
+}
+
+/* Images in Expertise Boxes */
+.expertise-box img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Headings in Expertise Boxes */
+.expertise-box h3 {
+  font-size: 18px;
+  color: #003b46;
+  margin-top: 15px;
+}
+
+/* Tooltip - Popup information on hover */
+.tooltip {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%); /* Centers tooltip horizontally */
+  background: rgba(0, 59, 70, 0.9);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 90%;
+  text-align: center;
+  visibility: hidden; /* Hides the element initially */
+  opacity: 0; /* Makes the element fully transparent */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smoothly transitions opacity and transform properties over 0.3 seconds */
+}
+
+/* Custom appearance of the Tooltip */
+.custom-qtip {
+  /* !important -> Used to increase the priority of the CSS rule. */
+  background-color: #003b46 !important;
+  color: white !important;
+  font-size: 1em !important;
+  line-height: 1.2em !important; 
+  border-radius: 10px !important;
+  padding: 15px 20px !important; 
+  text-align: center;
+  max-width: 250px; /* Set maximum width to 250px */
+  word-wrap: break-word; /* Wrap long words to the next line with word wrap feature */
+}
+
+/* Testimonials Section - Client reviews styling */
+.testimonials {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #e6f7f9, #d0f0f3);
+}
+
+.testimonials h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: rgba(0, 59, 70, 0.9);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+
+.testimonial-slider {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Testimonial Text Styling */
+.testimonial {
+  background: #ffffff;
+  border-left: 6px solid #003b46;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding: 30px 25px;
+  margin: 0 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.testimonial:hover {
+  transform: scale(1.02); /* Slightly enlarges the testimonial on hover */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* Adds a soft shadow on hover */
+}
+
+.testimonial p {
+  font-size: 18px;
+  color: #444;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.testimonial span {
+  display: block;
+  text-align: right;
+  color: #6cafb8; /* Light blue for client names */
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Footer - Page bottom styling */
+.footer {
+  background: #003b46;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer .container p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Social Media Links - Footer contact links */
+.social-media {
+  margin-top: 15px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  margin: 0 10px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.3s;  
+}
+
+.social-link img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border-radius: 30%; /* Rounded icon corners */
+}
+
+/* Hover Effects added*/
+.instagram:hover {
+  background: #e4405f;
+}
+
+.linkedin:hover {
+  background: #0077b5;
+}
+
+.email:hover {
+  background: #d44638;
+}
+/* End of Footer */
+
+/* About Me Page Styling */
+.about {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.about h1 {
+  font-size: 28px;
+  color: #003b46;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Content Area - Flex layout for bio and image */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Psychologist Photo */
+.profile-img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* More Information Button */
+#open-dialog {
+  background-color: #003b46;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+#open-dialog:hover {
+  background-color: #6cafb8;
+  color: black;
+}
+
+/* Dialog general box */
+.ui-dialog {
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  color: black;
+  width: 400px !important;
+}
+
+/* Dialog title */
+.ui-dialog-titlebar {
+  background-color: #003b46;
+  color: white;
+  border: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* Close Button (X) */
+.ui-dialog-titlebar-close {
+  background-color: white;
+  color: #003b46;
+  border: 1px solid #003b46;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-weight: bold;
+}
+
+/* Dialog content */
+#dialog {
+  font-family: 'Segoe UI', sans-serif;
+  font-style: bold;
+  font-size: 18px;
+  padding: 15px;
+}
+
+#dialog ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+#dialog p strong {
+  color: #003b46;
+}
+
+/* Biography Text */
+.bio {
+  max-width: 500px;
+  text-align: left;
+  font-size: 18px;
+  color: #4a4a4a;
+}
+
+/* Blog Page Styling */
+.blog {
+  background: #f5f8fa; /* Light gray background */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.blog h2 {
+  font-size: 28px;
+  color: #003b46;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+/* Grid Layout - For blog post previews */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Blog Post Cards */
+.blog-box {
+  position: relative;
+  background: white;
+  padding: 0;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth transition for hover effects */
+  overflow: hidden; /* Prevents content from spilling out */
+}
+
+.blog-box a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Blog Post Preview Images */
+.blog-box img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover; /* Maintains aspect ratio while filling space */
+  border-radius: 10px;
+  transition: transform 0.3s ease; /* Smooth transform transition */
+}
+
+/* Blog Post Titles */
+.blog-box h3 {
+  font-size: 18px;
+  color: #003b46;
+  margin-top: 10px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effects added for Blog*/
+.blog-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Blog Content Styling - For individual blog post pages */
+.blog-content {
+  max-width: 900px; /* Maximum content width */
+  margin: 80px auto 40px auto; /* Centers content, leaves space for navbar */
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  text-align: left; /* Left-aligned text */
+}
+
+/* Blog Post Headings */
+.blog-content h1 {
+  font-size: 30px;
+  color: #003b46;
+  margin-bottom: 20px;
+}
+
+.blog-content h2 {
+  font-size: 24px;
+  color: #003b46;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.blog-content h3 {
+  font-size: 20px;
+  color: #003b46;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* Blog Post Paragraphs */
+.blog-content p {
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 1.8;
+}
+
+/* Blog Post Lists */
+.blog-content ul,
+.blog-content ol {
+  padding-left: 20px;
+}
+
+.blog-content ul li,
+.blog-content ol li {
+  font-size: 16px;
+  color: #003b46;
+  margin-bottom: 8px;
+}
+
+/* Blog Post Images */
+.blog-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a soft shadow for a subtle depth effect */
+}
+
+/* Online Appointment Page Styling */
+.online-appointment {
+  background: #f5f8fa; /* Light gray background */
+  padding: 60px 20px;
+}
+
+.appointment-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.online-appointment h2 {
+  font-size: 28px;
+  color: #003b46;
+  margin-bottom: 10px;
+}
+
+.online-appointment p {
+  font-size: 16px;
+  color: #4a4a4a;
+}
+
+/* Appointment Container */
+.appointment-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.appointment-form-container {
+  flex: 1;
+  width: 50%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Form Styling - Appointment request form */
+#appointment-form {
+  width: 100%;
+}
+
+#appointment-form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #003b46;
+  text-align: left;
+}
+
+#appointment-form input,
+#appointment-form textarea {
+  width: 95%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 20px;
+}
+#appointment-form select{
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+textarea {
+  resize: none; /* Prevents textarea resizing */
+}
+
+#slider {
+  width: 100%; 
+  background-color: #6cafb8; /* Slider background color */
+  margin-top: 10px;
+}
+
+/* Style the slider (handle) on the slider */
+#slider .ui-slider-handle {
+  background-color: rgba(0, 59, 70, 0.9); 
+  border-radius: 50%; 
+  width: 20px; 
+  height: 20px; 
+  border: none; /* No border */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2); 
+}
+
+#appointment-form button {
+  background: #003b46;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background 0.3s; /* Smooth background color change on hover or interaction */
+}
+
+#appointment-date {
+  width: 100% !important;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-sizing: border-box; /* Include padding and border in width */
+  margin-bottom: 15px;
+}
+
+.ui-datepicker {
+background: #6cafb8; /* Calendar background color */
+border: 1px solid #6cafb8; /* Calendar border color */
+border-radius: 8px; /* Calendar rounded corners */
+padding: 10px; /* Inner spacing */
+color: #fff;
+}
+
+.ui-datepicker td a {
+background: #ffffff; /* Date background color */
+color: #6cafb8;
+padding: 5px 8px;
+transition: background 0.3s; /* Smooth background transition */
+}
+
+.ui-datepicker td a:hover {
+background: #ffffff; /* Keep background on hover */
+color: #333; /* Darker text color on hover */
+}
+
+.ui-timepicker-div {
+background: #6cafb8; /* Time picker background color */
+padding: 10px; /* Inner spacing */
+}
+
+/* "Your message has been sent" modal */
+/* Modal background */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2000; /* On top of other elements */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5);  /* Dark semi-transparent background */
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #ffffff;
+  margin: 15% auto; /* Center align */
+  padding: 30px;
+  border: 1px solid #888; /* Light border */
+  width: 80%;
+  max-width: 400px; /* Max width limit */
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Drop shadow */
+}
+
+/* Close button */
+.close-button {
+  color: #aaa; /* Light gray color */
+  float: right; /* Align to right */
+  font-size: 28px; /* Larger text */
+  font-weight: bold;
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black; /* Darker color on hover/focus */
+}
+
+/* FAQ Section - Frequently Asked Questions */
+.faq-section {
+  background-color: #c5e1e6;
+  min-height: auto;
+  padding: 40px 20px;
+}
+
+#faq-container {
+  color: #003b46;
+  margin-top: 30px;
+  background-color: #f5f8fa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#faq-accordion {
+  width: 1100px; 
+  margin-left: 0; /* Aligned to the left */
+  background-color: #6cafb8; 
+  padding: 20px; 
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Accordion headers (questions) */
+#faq-accordion h3 {
+  background-color: #579ca3; /* Darker tone for headers */
+  color: white; /* White text color */
+  padding: 15px; 
+  margin: 0;
+  font-size: 19px; /* Font size for questions */
+  border: none;
+  border-radius: 5px; /* Slightly rounded header corners */
+}
+
+/* Accordion content (answers) */
+#faq-accordion .ui-accordion-content {
+  background-color: #d9eff1; /* Light tone for content background */
+  color: #333; /* Dark gray text color */
+  padding: 15px; 
+  font-size: 17px;
+  border-radius: 5px; /* Rounded corners for content */
+  margin-bottom: 15px; /* Extra space below each answer */
+}
+/* End of FAQ section */
+
+/* Contact Page Styling */
+.contact-page {
+  background: #f5f8fa;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-page h2 {
+  font-size: 28px;
+  color: #003b46;
+  margin-bottom: 20px;
+}
+
+.contact-page p {
+  font-size: 16px;
+  color: #4a4a4a;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+/* Contact Information Boxes */
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center;
+  width: 250px;
+  transition: 0.3s; /* All properties will smoothly change in 0.3 seconds */
+  margin-top: 50px;
+}
+
+.contact-box img {
+  width: 50px;
+  margin-bottom: 10px;
+  border-radius: 50%;  /* Circular icons */
+  background: rgba(0, 0, 0, 0.05);
+  padding: 10px;
+}
+
+.contact-box h3 {
+  font-size: 20px;
+  color: #003b46;
+  margin-bottom: 5px;
+}
+
+.contact-box p a {
+  color: #0077b5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-box:hover {
+  transform: translateY(-5px); /* Move the box up a bit on the hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#contact-title, #contact-intro {
+  position: relative;
+}

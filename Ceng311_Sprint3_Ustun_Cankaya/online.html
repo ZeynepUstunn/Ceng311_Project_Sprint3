@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Appointment | Aybüke Üstün</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery-UI -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+    <!--Timepicker Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
+
+    <!-- Include JavaScript File -->
+    <script src="scripts.js"></script>
+
+</head>
+<body>
+
+    <!-- Navbar Place -->
+<div id="navbar"></div> <!-- Navbar will be loaded here automatically -->
+
+    <section class="online-appointment">
+        <div class="container">
+            <div class="appointment-header">
+                <h2>Online Appointment Request</h2>
+                <p>You can fill out and submit the form below to request an appointment.</p>
+            </div>
+            <div class="appointment-container">
+                <div class="appointment-form-container">
+                    <form id="appointment-form" action="https://formspree.io/f/xzzdlpad" method="POST">
+                        <label for="name">Your Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Your Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="subject">Subject You Want to Consult On:</label>
+                        <select id="subject" name="subject" required>
+                            <option value="Bireysel Terapi">Individual Therapy</option>
+                            <option value="Aile ve Çift Terapisi">Family and Couple Therapy</option>
+                            <option value="Çocuk ve Ergen Psikolojisi">Child and Adolescent Psychology</option>
+                            <option value="Kaygı ve Depresyon">Anxiety and Depression</option>
+                            <option value="Stres Yönetimi">Stress Management</option>
+                            <option value="Travma ve Yas Danışmanlığı">Trauma and Grief Counseling</option>
+                            <option value="Diğer">Other</option>
+                        </select>
+
+                        <label for="appointment-date">Appointment Date and Time:</label>
+                        <input type="text" id="appointment-date" name="appointment-date" value="Select date and time from the calendar" readonly required>
+
+                        <label for="message">Description:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+
+                        <!-- Slider for Stress Level -->
+                        <label for="stress-level">Stress Level (0 to 100):</label>
+                        <div id="slider"></div>
+                        <p>Selected Stress Level: <span id="slider-value">50</span></p>
+                        
+                        <button type="submit">Send Message</button>
+                    </form>
+
+                    <!-- Modal for Successful Message -->
+                    <div id="success-modal" class="modal">
+                        <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h2>Your Appointment Request Has Been Sent!</h2>
+                        <p>Thank you for contacting us. We will get back to you as soon as possible.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Frequently Asked Questions Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div id="faq-container">
+                <h2>Frequently Asked Questions</h2>
+        
+                <div id="faq-accordion">
+                    <h3>What should I do to make an appointment?</h3>
+                    <div>
+                        <p>Fill out and submit the form on the online appointment page to make your appointment. You will be contacted before the appointment to inform you about the process. Additionally, you can reach us for any questions via the contact information available in the contact section.</p>
+                    </div>
+        
+                    <h3>How can I get information about session fees?</h3>
+                    <div>
+                        <p>You can send an email or use the contact form to get information about session fees. You will receive a response as soon as possible.</p>
+                    </div>
+        
+                    <h3>Can I have a preliminary meeting before starting the therapy process?</h3>
+                    <div>
+                        <p>Yes, a preliminary meeting can be arranged upon request. You can request a preliminary meeting to evaluate the process and get information about the therapy.</p>
+                    </div>
+        
+                    <h3>How can I join online therapy?</h3>
+                    <div>
+                        <p>Online therapy sessions will be held via Google Meet. The connection details and necessary instructions will be sent to you before the session.</p>
+                    </div>
+        
+                    <h3>How long does a session last?</h3>
+                    <div>
+                        <p>A therapy session typically lasts 45-50 minutes.</p>
+                    </div>
+        
+                    <h3>How soon will I receive a response if I send a message via email or contact form?</h3>
+                    <div>
+                        <p>You will receive a response to your message within one day at the latest.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   <!-- Footer Place -->
+ <div id="footer"></div>
+
+</body>
+</html>
