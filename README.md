@@ -50,6 +50,6 @@ Usage:
   Code: `$("#success-modal").fadeIn();`  
 - Contact page entrance animations handled with jQuery `.animate()` method.
 
-
+Note: Taking photos directly from the URL instead of uploading them may cause a short wait when opening for the first time.
 
 
